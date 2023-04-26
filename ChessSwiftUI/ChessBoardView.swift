@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ChessBoardView: View {
     @State private var chessBoard = ChessBoard()
-
+    @State private var selectedPiece: ChessPiece? = nil
+    @State private var selectedPiecePosition: (Int, Int)? = nil
+    
     var body: some View {
         VStack {
             ForEach(0..<8, id: \.self) { row in
@@ -22,17 +24,37 @@ struct ChessBoardView: View {
                                 ChessPieceView(piece: piece)
                             }
                         }
+                        .frame(width: 44, height: 44)
+                        .onTapGesture {
+                            handleTap(row: row, col: col)
+                        }
                     }
                 }
             }
         }
     }
-}
-
-struct ChessPieceView: View {
-    let piece: ChessPiece
-
-    var body: some View {
-        ChessBoardView()
+    
+    private func handleTap(row: Int, col: Int) {
+        let tappedSquare = (row, col)
+        let tappedPiece = chessBoard.board[row][col]
+        
+        if let selectedPiece = selectedPiece, let selectedPiecePosition = selectedPiecePosition {
+            if chessBoard.isValidMove(from: selectedPiecePosition, to: tappedSquare) {
+                chessBoard.movePiece(from: selectedPiecePosition, to: tappedSquare)
+                self.selectedPiece = nil
+                self.selectedPiecePosition = nil
+            } else if tappedPiece?.color == selectedPiece.color {
+                self.selectedPiece = tappedPiece
+                self.selectedPiecePosition = tappedSquare
+            } else {
+                self.selectedPiece = nil
+                self.selectedPiecePosition = nil
+            }
+        } else if tappedPiece != nil {
+            selectedPiece = tappedPiece
+            selectedPiecePosition = tappedSquare
+        }
     }
 }
+
+

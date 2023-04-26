@@ -13,6 +13,7 @@
 		0818064D29F9CBC70068B017 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0818064C29F9CBC70068B017 /* Preview Assets.xcassets */; };
 		0818065429F9CBD80068B017 /* ChessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818065329F9CBD80068B017 /* ChessModel.swift */; };
 		0818065629F9CBF80068B017 /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818065529F9CBF80068B017 /* ChessBoardView.swift */; };
+		0818065829F9D1610068B017 /* ChessPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818065729F9D1610068B017 /* ChessPieceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0818064C29F9CBC70068B017 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0818065329F9CBD80068B017 /* ChessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessModel.swift; sourceTree = "<group>"; };
 		0818065529F9CBF80068B017 /* ChessBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardView.swift; sourceTree = "<group>"; };
+		0818065729F9D1610068B017 /* ChessPieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPieceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0818064729F9CBC60068B017 /* ContentView.swift */,
 				0818065329F9CBD80068B017 /* ChessModel.swift */,
 				0818065529F9CBF80068B017 /* ChessBoardView.swift */,
+				0818065729F9D1610068B017 /* ChessPieceView.swift */,
 				0818064929F9CBC70068B017 /* Assets.xcassets */,
 				0818064B29F9CBC70068B017 /* Preview Content */,
 			);
@@ -146,6 +149,7 @@
 				0818065629F9CBF80068B017 /* ChessBoardView.swift in Sources */,
 				0818064829F9CBC60068B017 /* ContentView.swift in Sources */,
 				0818065429F9CBD80068B017 /* ChessModel.swift in Sources */,
+				0818065829F9D1610068B017 /* ChessPieceView.swift in Sources */,
 				0818064629F9CBC60068B017 /* ChessSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
