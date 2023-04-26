@@ -14,6 +14,8 @@
 		0818065629F9CBF80068B017 /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818065529F9CBF80068B017 /* ChessBoardView.swift */; };
 		0818065829F9D1610068B017 /* ChessPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818065729F9D1610068B017 /* ChessPieceView.swift */; };
 		0818065B29F9D35B0068B017 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818065A29F9D35B0068B017 /* ChessPiece.swift */; };
+		0818066A29F9E71A0068B017 /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818066929F9E71A0068B017 /* SignInWithAppleViewModel.swift */; };
+		0818066C29F9E80C0068B017 /* SignInWithAppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818066B29F9E80C0068B017 /* SignInWithAppleButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		0818065529F9CBF80068B017 /* ChessBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardView.swift; sourceTree = "<group>"; };
 		0818065729F9D1610068B017 /* ChessPieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPieceView.swift; sourceTree = "<group>"; };
 		0818065A29F9D35B0068B017 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
+		0818066729F9E6D10068B017 /* ChessSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChessSwiftUI.entitlements; sourceTree = "<group>"; };
+		0818066929F9E71A0068B017 /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
+		0818066B29F9E80C0068B017 /* SignInWithAppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +62,9 @@
 		0818064429F9CBC60068B017 /* ChessSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0818066729F9E6D10068B017 /* ChessSwiftUI.entitlements */,
 				0818064529F9CBC60068B017 /* ChessSwiftUIApp.swift */,
+				0818066829F9E6EA0068B017 /* View Model */,
 				0818065929F9D3490068B017 /* Models */,
 				0818065C29F9D3900068B017 /* Views */,
 				0818064929F9CBC70068B017 /* Assets.xcassets */,
@@ -88,8 +95,18 @@
 			children = (
 				0818065529F9CBF80068B017 /* ChessBoardView.swift */,
 				0818065729F9D1610068B017 /* ChessPieceView.swift */,
+				0818066B29F9E80C0068B017 /* SignInWithAppleButtonView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0818066829F9E6EA0068B017 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				0818066929F9E71A0068B017 /* SignInWithAppleViewModel.swift */,
+			);
+			name = "View Model";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +125,8 @@
 			dependencies = (
 			);
 			name = ChessSwiftUI;
+			packageProductDependencies = (
+			);
 			productName = ChessSwiftUI;
 			productReference = 0818064229F9CBC60068B017 /* ChessSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +155,8 @@
 				Base,
 			);
 			mainGroup = 0818063929F9CBC60068B017;
+			packageReferences = (
+			);
 			productRefGroup = 0818064329F9CBC60068B017 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,6 +188,8 @@
 				0818065829F9D1610068B017 /* ChessPieceView.swift in Sources */,
 				0818064629F9CBC60068B017 /* ChessSwiftUIApp.swift in Sources */,
 				0818065B29F9D35B0068B017 /* ChessPiece.swift in Sources */,
+				0818066A29F9E71A0068B017 /* SignInWithAppleViewModel.swift in Sources */,
+				0818066C29F9E80C0068B017 /* SignInWithAppleButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChessSwiftUI/ChessSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChessSwiftUI/Preview Content\"";
@@ -321,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChessSwiftUI/ChessSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChessSwiftUI/Preview Content\"";
