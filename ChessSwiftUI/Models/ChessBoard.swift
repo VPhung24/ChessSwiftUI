@@ -7,25 +7,6 @@
 
 import Foundation
 
-struct ChessPiece {
-    enum PieceType {
-        case king, queen, rook, bishop, knight, pawn
-    }
-    
-    enum PieceColor {
-        case white, black
-    }
-    
-    let type: PieceType
-    let color: PieceColor
-}
-
-extension ChessPiece {
-    var imageName: String {
-        return "\(color)_\(type)"
-    }
-}
-
 struct ChessBoard {
     var board: [[ChessPiece?]]
     
@@ -47,50 +28,34 @@ struct ChessBoard {
 
 extension ChessBoard {
     func isValidMove(from: (Int, Int), to: (Int, Int)) -> Bool {
-        guard let piece = board[from.0][from.1] else { return false }
+        guard isInsideBoard(from) && isInsideBoard(to) else { return false }
         
-        // Check if the destination is within the bounds of the board.
-        if to.0 < 0 || to.0 >= 8 || to.1 < 0 || to.1 >= 8 {
-            return false
-        }
+        let movingPiece = board[from.0][from.1]
+        guard let piece = movingPiece else { return false }
         
-        // Check if the destination is empty or contains an enemy piece.
-        if let destinationPiece = board[to.0][to.1] {
-            if destinationPiece.color == piece.color {
+        if let targetPiece = board[to.0][to.1] {
+            if targetPiece.color == piece.color {
                 return false
             }
         }
-        
-        let deltaX = abs(to.0 - from.0)
-        let deltaY = abs(to.1 - from.1)
-        
         switch piece.type {
-        case .king:
-            return (deltaX <= 1 && deltaY <= 1)
-            
-        case .queen:
-            return (deltaX == 0 || deltaY == 0 || deltaX == deltaY) && isPathClear(from: from, to: to)
-            
-        case .rook:
-            return (deltaX == 0 || deltaY == 0) && isPathClear(from: from, to: to)
-            
-        case .bishop:
-            return (deltaX == deltaY) && isPathClear(from: from, to: to)
-            
-        case .knight:
-            return (deltaX == 1 && deltaY == 2) || (deltaX == 2 && deltaY == 1)
-            
         case .pawn:
-            let direction = piece.color == .white ? -1 : 1
-            let startRow = piece.color == .white ? 6 : 1
-            let isCapture = board[to.0][to.1] != nil
-            
-            if from.0 == startRow && deltaY == 2 && deltaX == 0 && !isCapture && isPathClear(from: from, to: to) {
-                return true
-            }
-            
-            return deltaY == 1 && ((isCapture && deltaX == 1) || (!isCapture && deltaX == 0)) && from.0 + direction == to.0
+            return isValidPawnMove(from: from, to: to, piece: piece)
+        case .rook:
+            return isValidRookMove(from: from, to: to)
+        case .knight:
+            return isValidKnightMove(from: from, to: to)
+        case .bishop:
+            return isValidBishopMove(from: from, to: to)
+        case .queen:
+            return isValidQueenMove(from: from, to: to)
+        case .king:
+            return isValidKingMove(from: from, to: to)
         }
+    }
+    
+    private func isInsideBoard(_ position: (Int, Int)) -> Bool {
+        return position.0 >= 0 && position.0 < 8 && position.1 >= 0 && position.1 < 8
     }
     
     func isPathClear(from: (Int, Int), to: (Int, Int)) -> Bool {
@@ -188,4 +153,62 @@ extension ChessBoard {
         
         return true
     }
+}
+
+extension ChessBoard {
+    private func isValidPawnMove(from: (Int, Int), to: (Int, Int), piece: ChessPiece) -> Bool {
+        let direction: Int = piece.color == .white ? -1 : 1
+        let oneStepForward = (from.0 + direction, from.1)
+        let twoStepsForward = (from.0 + 2 * direction, from.1)
+        
+        if oneStepForward == to && board[to.0][to.1] == nil {
+            return true
+        }
+        
+        if twoStepsForward == to && (piece.color == .white ? from.0 == 6 : from.0 == 1) && board[oneStepForward.0][oneStepForward.1] == nil && board[twoStepsForward.0][twoStepsForward.1] == nil {
+            return true
+        }
+        
+        let captureMoves = [(from.0 + direction, from.1 - 1), (from.0 + direction, from.1 + 1)]
+        
+        for captureMove in captureMoves {
+            if captureMove == to {
+                if let targetPiece = board[to.0][to.1], targetPiece.color != piece.color {
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
+    
+    private func isValidRookMove(from: (Int, Int), to: (Int, Int)) -> Bool {
+        // Horizontal or vertical move
+        return from.0 == to.0 || from.1 == to.1
+    }
+    
+    private func isValidKnightMove(from: (Int, Int), to: (Int, Int)) -> Bool {
+        // L-shaped move
+        let rowDifference = abs(from.0 - to.0)
+        let colDifference = abs(from.1 - to.1)
+        return (rowDifference == 2 && colDifference == 1) || (rowDifference == 1 && colDifference == 2)
+    }
+    
+    private func isValidBishopMove(from: (Int, Int), to: (Int, Int)) -> Bool {
+        // Diagonal move
+        return abs(from.0 - to.0) == abs(from.1 - to.1)
+    }
+    
+    private func isValidQueenMove(from: (Int, Int), to: (Int, Int)) -> Bool {
+        // Combination of rook and bishop moves
+        return isValidRookMove(from: from, to: to) || isValidBishopMove(from: from, to: to)
+    }
+    
+    private func isValidKingMove(from: (Int, Int), to: (Int, Int)) -> Bool {
+        // One step in any direction
+        let rowDifference = abs(from.0 - to.0)
+        let colDifference = abs(from.1 - to.1)
+        return rowDifference <= 1 && colDifference <= 1
+    }
+    
 }

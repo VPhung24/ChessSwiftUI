@@ -20,11 +20,20 @@ struct ChessBoardView: View {
                         ZStack {
                             Rectangle()
                                 .fill((row + col) % 2 == 0 ? Color.white : Color.gray)
+                            
                             if let piece = chessBoard.board[row][col] {
                                 ChessPieceView(piece: piece)
                             }
+                            
+                            if let selectedPiecePosition = selectedPiecePosition,
+                               chessBoard.getPossibleMoves(for: selectedPiece!, at: selectedPiecePosition).contains(where: { $0 == (row, col) }) {
+                                Circle()
+                                    .fill(Color.blue.opacity(0.3))
+                                    .frame(width: 30, height: 30)
+                            }
                         }
                         .frame(width: 44, height: 44)
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             handleTap(row: row, col: col)
                         }

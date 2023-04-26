@@ -14,12 +14,12 @@ struct ChessPieceView: View {
         Image(piece.imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .padding(5)
     }
 }
 
 struct ChessPieceView_Previews: PreviewProvider {
     static var previews: some View {
-        ChessPieceView(piece: .init(type: .bishop, color: .white))
+        ChessPieceView(piece: ChessPiece(type: .bishop, color: .white
+                                        ))
     }
 }
