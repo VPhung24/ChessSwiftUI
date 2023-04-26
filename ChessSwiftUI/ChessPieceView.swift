@@ -14,6 +14,7 @@ struct ChessPieceView: View {
         Image(piece.imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .padding(5)
     }
 }
 

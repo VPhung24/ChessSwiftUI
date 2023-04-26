@@ -13,9 +13,9 @@ struct ChessBoardView: View {
     @State private var selectedPiecePosition: (Int, Int)? = nil
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ForEach(0..<8, id: \.self) { row in
-                HStack {
+                HStack(spacing: 0) {
                     ForEach(0..<8, id: \.self) { col in
                         ZStack {
                             Rectangle()
