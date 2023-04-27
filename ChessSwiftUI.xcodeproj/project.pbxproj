@@ -69,9 +69,9 @@
 		0818064429F9CBC60068B017 /* ChessSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				0818067929F9FEFA0068B017 /* View Model */,
 				0818067329F9F7370068B017 /* AppDelegate.swift */,
 				0818064529F9CBC60068B017 /* ChessSwiftUIApp.swift */,
+				0818067929F9FEFA0068B017 /* View Model */,
 				0818065929F9D3490068B017 /* Models */,
 				0818065C29F9D3900068B017 /* Views */,
 				0818064929F9CBC70068B017 /* Assets.xcassets */,
