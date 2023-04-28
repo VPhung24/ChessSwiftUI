@@ -19,7 +19,27 @@
 		0818066E29F9EF690068B017 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818066D29F9EF690068B017 /* LoginView.swift */; };
 		0818067129F9F5520068B017 /* CoinbaseWalletSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0818067029F9F5520068B017 /* CoinbaseWalletSDK */; };
 		0818067429F9F7370068B017 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818067329F9F7370068B017 /* AppDelegate.swift */; };
+		08453BFD29FB9B100082957B /* SignInWithAppleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453BFC29FB9B100082957B /* SignInWithAppleManager.swift */; };
+		08453BFF29FB9CBF0082957B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453BFE29FB9CBF0082957B /* Game.swift */; };
+		08453C0129FB9CDF0082957B /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453C0029FB9CDF0082957B /* LobbyView.swift */; };
+		08453C0429FB9D2A0082957B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453C0329FB9D2A0082957B /* GameView.swift */; };
+		08453C0729FB9D5B0082957B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453C0629FB9D5B0082957B /* Player.swift */; };
+		08453C0929FB9E340082957B /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453C0829FB9E340082957B /* Coordinate.swift */; };
+		08453C0C29FBA2A20082957B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 08453C0B29FBA2A20082957B /* FirebaseFirestore */; };
+		08453C0E29FBA2A20082957B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 08453C0D29FBA2A20082957B /* FirebaseFirestoreSwift */; };
+		08453C1729FBA61B0082957B /* ChessSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453C1629FBA61B0082957B /* ChessSwiftUITests.swift */; };
+		08453C3C29FBA6A00082957B /* ChessBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08453C3B29FBA6A00082957B /* ChessBoardTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08453C1829FBA61B0082957B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0818063A29F9CBC60068B017 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0818064129F9CBC60068B017;
+			remoteInfo = ChessSwiftUI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0818064229F9CBC60068B017 /* ChessSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +56,15 @@
 		0818066D29F9EF690068B017 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0818067229F9F5D20068B017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0818067329F9F7370068B017 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		08453BFC29FB9B100082957B /* SignInWithAppleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleManager.swift; sourceTree = "<group>"; };
+		08453BFE29FB9CBF0082957B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		08453C0029FB9CDF0082957B /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
+		08453C0329FB9D2A0082957B /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		08453C0629FB9D5B0082957B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		08453C0829FB9E340082957B /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		08453C1429FBA61B0082957B /* ChessSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08453C1629FBA61B0082957B /* ChessSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessSwiftUITests.swift; sourceTree = "<group>"; };
+		08453C3B29FBA6A00082957B /* ChessBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +73,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0818067129F9F5520068B017 /* CoinbaseWalletSDK in Frameworks */,
+				08453C0C29FBA2A20082957B /* FirebaseFirestore in Frameworks */,
+				08453C0E29FBA2A20082957B /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08453C1129FBA61B0082957B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				0818064429F9CBC60068B017 /* ChessSwiftUI */,
+				08453C1529FBA61B0082957B /* ChessSwiftUITests */,
 				0818064329F9CBC60068B017 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				0818064229F9CBC60068B017 /* ChessSwiftUI.app */,
+				08453C1429FBA61B0082957B /* ChessSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +111,7 @@
 			children = (
 				0818067329F9F7370068B017 /* AppDelegate.swift */,
 				0818064529F9CBC60068B017 /* ChessSwiftUIApp.swift */,
+				08453BFB29FB9AE00082957B /* Manager */,
 				0818067929F9FEFA0068B017 /* View Model */,
 				0818065929F9D3490068B017 /* Models */,
 				0818065C29F9D3900068B017 /* Views */,
@@ -95,6 +136,8 @@
 			children = (
 				0818065329F9CBD80068B017 /* ChessBoard.swift */,
 				0818065A29F9D35B0068B017 /* ChessPiece.swift */,
+				08453C0629FB9D5B0082957B /* Player.swift */,
+				08453C0829FB9E340082957B /* Coordinate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,6 +149,8 @@
 				0818065729F9D1610068B017 /* ChessPieceView.swift */,
 				0818066B29F9E80C0068B017 /* SignInWithAppleButtonView.swift */,
 				0818066D29F9EF690068B017 /* LoginView.swift */,
+				08453C0029FB9CDF0082957B /* LobbyView.swift */,
+				08453C0329FB9D2A0082957B /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +161,24 @@
 				0818066929F9E71A0068B017 /* SignInWithAppleViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		08453BFB29FB9AE00082957B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				08453BFC29FB9B100082957B /* SignInWithAppleManager.swift */,
+				08453BFE29FB9CBF0082957B /* Game.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		08453C1529FBA61B0082957B /* ChessSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				08453C1629FBA61B0082957B /* ChessSwiftUITests.swift */,
+				08453C3B29FBA6A00082957B /* ChessBoardTests.swift */,
+			);
+			path = ChessSwiftUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,10 +199,30 @@
 			name = ChessSwiftUI;
 			packageProductDependencies = (
 				0818067029F9F5520068B017 /* CoinbaseWalletSDK */,
+				08453C0B29FBA2A20082957B /* FirebaseFirestore */,
+				08453C0D29FBA2A20082957B /* FirebaseFirestoreSwift */,
 			);
 			productName = ChessSwiftUI;
 			productReference = 0818064229F9CBC60068B017 /* ChessSwiftUI.app */;
 			productType = "com.apple.product-type.application";
+		};
+		08453C1329FBA61B0082957B /* ChessSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08453C1A29FBA61B0082957B /* Build configuration list for PBXNativeTarget "ChessSwiftUITests" */;
+			buildPhases = (
+				08453C1029FBA61B0082957B /* Sources */,
+				08453C1129FBA61B0082957B /* Frameworks */,
+				08453C1229FBA61B0082957B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08453C1929FBA61B0082957B /* PBXTargetDependency */,
+			);
+			name = ChessSwiftUITests;
+			productName = ChessSwiftUITests;
+			productReference = 08453C1429FBA61B0082957B /* ChessSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -154,6 +237,10 @@
 					0818064129F9CBC60068B017 = {
 						CreatedOnToolsVersion = 14.3;
 					};
+					08453C1329FBA61B0082957B = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 0818064129F9CBC60068B017;
+					};
 				};
 			};
 			buildConfigurationList = 0818063D29F9CBC60068B017 /* Build configuration list for PBXProject "ChessSwiftUI" */;
@@ -167,12 +254,14 @@
 			mainGroup = 0818063929F9CBC60068B017;
 			packageReferences = (
 				0818066F29F9F5520068B017 /* XCRemoteSwiftPackageReference "wallet-mobile-sdk" */,
+				08453C0A29FBA2A20082957B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 0818064329F9CBC60068B017 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0818064129F9CBC60068B017 /* ChessSwiftUI */,
+				08453C1329FBA61B0082957B /* ChessSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +276,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08453C1229FBA61B0082957B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,19 +290,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08453BFD29FB9B100082957B /* SignInWithAppleManager.swift in Sources */,
 				0818065629F9CBF80068B017 /* ChessBoardView.swift in Sources */,
 				0818065429F9CBD80068B017 /* ChessBoard.swift in Sources */,
 				0818065829F9D1610068B017 /* ChessPieceView.swift in Sources */,
+				08453C0729FB9D5B0082957B /* Player.swift in Sources */,
 				0818067429F9F7370068B017 /* AppDelegate.swift in Sources */,
+				08453C0129FB9CDF0082957B /* LobbyView.swift in Sources */,
 				0818064629F9CBC60068B017 /* ChessSwiftUIApp.swift in Sources */,
+				08453BFF29FB9CBF0082957B /* Game.swift in Sources */,
 				0818065B29F9D35B0068B017 /* ChessPiece.swift in Sources */,
 				0818066A29F9E71A0068B017 /* SignInWithAppleViewModel.swift in Sources */,
 				0818066E29F9EF690068B017 /* LoginView.swift in Sources */,
+				08453C0429FB9D2A0082957B /* GameView.swift in Sources */,
 				0818066C29F9E80C0068B017 /* SignInWithAppleButtonView.swift in Sources */,
+				08453C0929FB9E340082957B /* Coordinate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08453C1029FBA61B0082957B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08453C1729FBA61B0082957B /* ChessSwiftUITests.swift in Sources */,
+				08453C3C29FBA6A00082957B /* ChessBoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08453C1929FBA61B0082957B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0818064129F9CBC60068B017 /* ChessSwiftUI */;
+			targetProxy = 08453C1829FBA61B0082957B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0818064E29F9CBC70068B017 /* Debug */ = {
@@ -389,6 +508,44 @@
 			};
 			name = Release;
 		};
+		08453C1B29FBA61B0082957B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9SAQ42S589;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vivianphung.ChessSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChessSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChessSwiftUI";
+			};
+			name = Debug;
+		};
+		08453C1C29FBA61B0082957B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9SAQ42S589;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vivianphung.ChessSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChessSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChessSwiftUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -410,6 +567,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		08453C1A29FBA61B0082957B /* Build configuration list for PBXNativeTarget "ChessSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08453C1B29FBA61B0082957B /* Debug */,
+				08453C1C29FBA61B0082957B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -421,6 +587,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		08453C0A29FBA2A20082957B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 10.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -428,6 +602,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0818066F29F9F5520068B017 /* XCRemoteSwiftPackageReference "wallet-mobile-sdk" */;
 			productName = CoinbaseWalletSDK;
+		};
+		08453C0B29FBA2A20082957B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08453C0A29FBA2A20082957B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		08453C0D29FBA2A20082957B /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08453C0A29FBA2A20082957B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

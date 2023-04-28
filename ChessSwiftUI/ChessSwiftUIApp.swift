@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ChessSwiftUIApp: App {
+    var signInWithAppleManager = SignInWithAppleManager()
+
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .environmentObject(signInWithAppleManager)
         }
     }
 }

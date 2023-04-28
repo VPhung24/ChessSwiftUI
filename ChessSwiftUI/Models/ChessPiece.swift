@@ -8,11 +8,11 @@
 import Foundation
 
 struct ChessPiece {
-    enum PieceType {
+    enum PieceType: String {
         case king, queen, rook, bishop, knight, pawn
     }
     
-    enum PieceColor {
+    enum PieceColor: String {
         case white, black
     }
     

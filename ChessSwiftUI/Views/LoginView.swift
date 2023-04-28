@@ -6,19 +6,44 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
-    @StateObject private var signInWithAppleViewModel = SignInWithAppleViewModel()
+    @EnvironmentObject var signInWithAppleManager: SignInWithAppleManager
 
     var body: some View {
-        NavigationView {
-            HStack {
-                SignInWithAppleButtonView()
+        VStack {
+            if signInWithAppleManager.isSignedIn {
+                VStack {
+                    Text("Welcome")
+                        .font(.largeTitle)
+
+                    if signInWithAppleManager.isSignedIn {
+                        NavigationLink(destination: LobbyView()) {
+                            VStack {
+                                LobbyView()
+                            }
+                        }
+                    }
+                }
+            } else {
+                VStack {
+                    Text("Sign in")
+                        .font(.headline)
+
+                    SignInWithAppleButton(.signIn, onRequest: { request in
+                        signInWithAppleManager.prepareRequest(request)
+                    }, onCompletion: { result in
+                        signInWithAppleManager.handleAuthorization(result)
+                    })
+                        .frame(width: 280, height: 45)
+                        .padding(.bottom, 16)
+                }
             }
         }
-        .environmentObject(signInWithAppleViewModel)
     }
 }
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

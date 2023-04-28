@@ -153,6 +153,14 @@ extension ChessBoard {
         
         return true
     }
+    
+    func getPiece(at coordinate: Coordinate) -> ChessPiece? {
+        return board[coordinate.row][coordinate.col]
+    }
+    
+    mutating func setPiece(at coordinate: (Int, Int), piece: ChessPiece?) {
+            board[coordinate.0][coordinate.1] = piece
+        }
 }
 
 extension ChessBoard {
@@ -209,6 +217,48 @@ extension ChessBoard {
         let rowDifference = abs(from.0 - to.0)
         let colDifference = abs(from.1 - to.1)
         return rowDifference <= 1 && colDifference <= 1
+    }
+    
+}
+
+extension ChessBoard {
+    func exportState() -> [String: Any] {
+        var state: [String: Any] = [:]
+        
+        for row in 0..<8 {
+            for col in 0..<8 {
+                if let piece = board[row][col] {
+                    let coordinate = Coordinate(row: row, col: col)
+                    let pieceData: [String: Any] = [
+                        "type": piece.type.rawValue,
+                        "color": piece.color.rawValue
+                    ]
+                    state["\(coordinate.row),\(coordinate.col)"] = pieceData
+                }
+            }
+        }
+        
+        return state
+    }
+    
+    mutating func importState(state: [String: Any]) {
+        // Clear the board before importing the state
+        board = Array(repeating: Array(repeating: nil, count: 8), count: 8)
+        
+        for (coordinateString, pieceData) in state {
+            let coordinates = coordinateString.split(separator: ",").map { Int($0)! }
+            let row = coordinates[0]
+            let col = coordinates[1]
+            
+            if let pieceData = pieceData as? [String: String],
+               let typeString = pieceData["type"],
+               let colorString = pieceData["color"],
+               let type = ChessPiece.PieceType(rawValue: typeString),
+               let color = ChessPiece.PieceColor(rawValue: colorString) {
+                let piece = ChessPiece(type: type, color: color)
+                board[row][col] = piece
+            }
+        }
     }
     
 }
