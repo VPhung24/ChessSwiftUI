@@ -16,6 +16,9 @@
 		0818065B29F9D35B0068B017 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818065A29F9D35B0068B017 /* ChessPiece.swift */; };
 		0818066A29F9E71A0068B017 /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818066929F9E71A0068B017 /* SignInWithAppleViewModel.swift */; };
 		0818066C29F9E80C0068B017 /* SignInWithAppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818066B29F9E80C0068B017 /* SignInWithAppleButtonView.swift */; };
+		0818066E29F9EF690068B017 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818066D29F9EF690068B017 /* LoginView.swift */; };
+		0818067129F9F5520068B017 /* CoinbaseWalletSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0818067029F9F5520068B017 /* CoinbaseWalletSDK */; };
+		0818067429F9F7370068B017 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818067329F9F7370068B017 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		0818066729F9E6D10068B017 /* ChessSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChessSwiftUI.entitlements; sourceTree = "<group>"; };
 		0818066929F9E71A0068B017 /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		0818066B29F9E80C0068B017 /* SignInWithAppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonView.swift; sourceTree = "<group>"; };
+		0818066D29F9EF690068B017 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0818067229F9F5D20068B017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0818067329F9F7370068B017 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0818067129F9F5520068B017 /* CoinbaseWalletSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +69,14 @@
 		0818064429F9CBC60068B017 /* ChessSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				0818066729F9E6D10068B017 /* ChessSwiftUI.entitlements */,
+				0818067329F9F7370068B017 /* AppDelegate.swift */,
 				0818064529F9CBC60068B017 /* ChessSwiftUIApp.swift */,
-				0818066829F9E6EA0068B017 /* View Model */,
+				0818067929F9FEFA0068B017 /* View Model */,
 				0818065929F9D3490068B017 /* Models */,
 				0818065C29F9D3900068B017 /* Views */,
 				0818064929F9CBC70068B017 /* Assets.xcassets */,
+				0818067229F9F5D20068B017 /* Info.plist */,
+				0818066729F9E6D10068B017 /* ChessSwiftUI.entitlements */,
 				0818064B29F9CBC70068B017 /* Preview Content */,
 			);
 			path = ChessSwiftUI;
@@ -96,17 +105,17 @@
 				0818065529F9CBF80068B017 /* ChessBoardView.swift */,
 				0818065729F9D1610068B017 /* ChessPieceView.swift */,
 				0818066B29F9E80C0068B017 /* SignInWithAppleButtonView.swift */,
+				0818066D29F9EF690068B017 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0818066829F9E6EA0068B017 /* View Model */ = {
+		0818067929F9FEFA0068B017 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 				0818066929F9E71A0068B017 /* SignInWithAppleViewModel.swift */,
 			);
-			name = "View Model";
-			path = ..;
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +135,7 @@
 			);
 			name = ChessSwiftUI;
 			packageProductDependencies = (
+				0818067029F9F5520068B017 /* CoinbaseWalletSDK */,
 			);
 			productName = ChessSwiftUI;
 			productReference = 0818064229F9CBC60068B017 /* ChessSwiftUI.app */;
@@ -156,6 +166,7 @@
 			);
 			mainGroup = 0818063929F9CBC60068B017;
 			packageReferences = (
+				0818066F29F9F5520068B017 /* XCRemoteSwiftPackageReference "wallet-mobile-sdk" */,
 			);
 			productRefGroup = 0818064329F9CBC60068B017 /* Products */;
 			projectDirPath = "";
@@ -186,9 +197,11 @@
 				0818065629F9CBF80068B017 /* ChessBoardView.swift in Sources */,
 				0818065429F9CBD80068B017 /* ChessBoard.swift in Sources */,
 				0818065829F9D1610068B017 /* ChessPieceView.swift in Sources */,
+				0818067429F9F7370068B017 /* AppDelegate.swift in Sources */,
 				0818064629F9CBC60068B017 /* ChessSwiftUIApp.swift in Sources */,
 				0818065B29F9D35B0068B017 /* ChessPiece.swift in Sources */,
 				0818066A29F9E71A0068B017 /* SignInWithAppleViewModel.swift in Sources */,
+				0818066E29F9EF690068B017 /* LoginView.swift in Sources */,
 				0818066C29F9E80C0068B017 /* SignInWithAppleButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -300,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -322,6 +335,9 @@
 				DEVELOPMENT_TEAM = 9SAQ42S589;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChessSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = lucena;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -352,6 +368,9 @@
 				DEVELOPMENT_TEAM = 9SAQ42S589;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChessSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = lucena;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -392,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0818066F29F9F5520068B017 /* XCRemoteSwiftPackageReference "wallet-mobile-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/coinbase/wallet-mobile-sdk";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0818067029F9F5520068B017 /* CoinbaseWalletSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0818066F29F9F5520068B017 /* XCRemoteSwiftPackageReference "wallet-mobile-sdk" */;
+			productName = CoinbaseWalletSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0818063A29F9CBC60068B017 /* Project object */;
 }
