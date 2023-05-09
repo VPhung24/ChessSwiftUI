@@ -12,6 +12,10 @@ class SignInWithAppleManager: NSObject, ObservableObject {
     @Published var isSignedIn = false
     @Published var player: Player?
 
+    func prepareRequest(_ request: ASAuthorizationAppleIDRequest) {
+        // Perform any additional configuration for the request, such as setting the nonce or state.
+    }
+
     func handleAuthorization(_ result: Result<ASAuthorization, Error>) {
         switch result {
         case .success(let authorization):
